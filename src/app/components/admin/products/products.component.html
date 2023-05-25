@@ -1,0 +1,42 @@
+<div class="container">
+    <p class = "title">Product List</p>
+    <span (click)="open()" class="add-product"><mat-icon>add</mat-icon> Add new product</span>
+    <table>
+     
+        <thead>
+          <tr>
+            <th></th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Product Type</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+  
+  
+      <tbody>
+        <div class="alert alert-danger" *ngIf="products?.length === 0">
+          You don't have any product yet
+        </div>
+        <tr *ngFor="let product of products">
+          <td><img [src]="product.image"/></td>
+          <td>{{ product?.productName }}</td>
+       
+          <td>{{product?.price | currency:'VND'}}</td>
+          <td>{{product.productType}}</td>
+
+            <!-- <td>{{ book?.createdAt | date:'dd/MM/yyyy HH:mm:ss' }}</td> -->
+    
+          <td>
+            <mat-icon (click)="deleteProduct(product)">cancel</mat-icon>
+          </td>
+          <td>
+            <mat-icon (click)="editProduct(product)">edit</mat-icon>
+          </td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+  

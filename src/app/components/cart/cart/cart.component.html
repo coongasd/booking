@@ -1,0 +1,50 @@
+<div class="table-responsive">
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+         
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <div class="alert alert-danger" *ngIf="products.length === 0"> There are nothing here!</div>
+      <tbody>
+
+        <tr *ngFor="let product of products">
+     
+          <td>{{ product.productName }}</td>
+          <td>{{ product.price | currency:'VND' }}</td>
+          <td>
+            
+              <select (change) = "onSelect(product,$event)"  id="productQty" [(ngModel)] = "product.productQty">
+            
+                <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" [value]="i">{{i}}</option>
+                
+              </select>
+           
+
+           
+          </td>
+          <td>{{ product.price * product.productQty  | currency:'VND' }}</td>
+          <td><button class="btn btn-danger" (click)="removeProduct(product)">Remove</button></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3"></td>
+          <th>Total:</th>
+          <th>{{ total   | currency:'VND' }}</th>
+        </tr>
+      </tfoot>
+
+    </table>
+    <div class="order-btn">
+      <button (click) = "placeOrder();" id="order-btn"> Order </button>
+    </div>
+  
+   
+  </div>

@@ -1,0 +1,68 @@
+:host{
+    width: 80%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+h2{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
+}
+thead{
+   background-color: rgb(203, 192, 192);
+   height: 50px;
+   color:black;
+}
+.add-product{
+    display: flex;
+    align-items: center;
+    background-color: #3C4B64;
+    color: white;
+    width : 20%;
+    padding: 10px;
+    cursor: pointer;
+}
+th , td{
+  text-align: center;
+}
+tr{
+    border: 1px solid white;
+    margin: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+mat-icon{
+    cursor: pointer;
+  
+}
+mat-icon:hover {
+   color: #ffbe33;
+}
+td{
+    height: 50px;
+ 
+}
+table{
+
+ 
+
+}
+img{
+    max-height: 80px;
+}
+
+@media screen and (max-width: 750px) {
+    
+  }
+  .title{
+ 
+    color: #374253;
+    font-size: calc(1.325rem + 0.9vw)!important;
+  }

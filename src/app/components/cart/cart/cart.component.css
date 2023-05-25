@@ -1,0 +1,51 @@
+.table-responsive {
+    overflow-x: auto;
+  }
+  
+  table {
+    margin-bottom: 0;
+    height: 50vh;
+  }
+ .order-btn{
+  display: flex;
+  justify-content: center;
+
+  #order-btn{
+    padding: 10px;
+    width: 25%;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    color: white;
+    background-color: black;
+    
+  }
+  #order-btn:hover{
+    background-color: #ffbe33;
+    color: black;
+  }
+
+
+ }
+  th, td {
+    vertical-align: middle;
+  }
+  
+  th:last-child, td:last-child {
+    text-align: right;
+  }
+  
+  tfoot th {
+    font-weight: bold;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+#productQty{
+  width: 70%;
+}
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }

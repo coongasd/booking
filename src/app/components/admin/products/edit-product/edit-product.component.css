@@ -1,0 +1,9 @@
+::ng-deep .modal-backdrop {
+    z-index: 0 !important;
+  }
+  form{
+    padding: 20px;
+  }
+  .red{
+    color: red;
+  }

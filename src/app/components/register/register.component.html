@@ -1,0 +1,45 @@
+<ngx-spinner
+type="ball-scale-multiple"
+>
+<div style="margin-left:5px;" class="la-ball-atom">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+
+</ngx-spinner>
+
+<form (ngSubmit)="submit()" [formGroup]="registerForm" class="login_form">
+    <span class="form_title">Register</span>
+    
+  <div>
+      <div class = "input">
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="name" name="username">
+      </div>
+      <p class="red" *ngIf="f['name'].errors?.['required'] && f['name'].touched">You need to fill this field</p>
+      <div class = "input">
+        <label for="email">Email</label>
+        <input formControlName="email" type="email" id="email" name="email">
+      </div>
+      <p class="red" *ngIf="f['email'].errors && f['email']touched">Invalid email </p>
+      <div class = "input">
+        <label for="password">Password</label>
+        <input formControlName="password" type="password" id="password" name="password">
+      </div>
+      <p class="red" *ngIf="f['password'].errors && f['password']touched">Your password is too short</p>
+      <div class = "input">
+        <label for="password">Repeat password</label>
+        <input formControlName="repeatPassword" type="password" id="password" name="password">
+      </div>
+      <p class="red" *ngIf="f['repeatPassword'].errors?.['required'] && f['repeatPassword']touched">You need to fill this field</p>
+      <br/>
+      <div class="alert alert-danger" *ngIf="registerForm.hasError('passwordsNotMatching') && f['password'].touched && f['repeatPassword'].touched">
+        Passwords do not match!
+      </div>
+  </div>
+  <div *ngIf="registerError" class="alert alert-danger">{{ registerError }}</div>
+  <p class="register_markup">Already have an account? Login <a routerLink="/login">here</a></p>
+    <button type="submit">Register</button>
+  </form>

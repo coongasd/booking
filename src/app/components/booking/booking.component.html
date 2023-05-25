@@ -1,0 +1,75 @@
+<div class="hero_area_menu">
+  
+   
+  
+  
+
+  </div>
+<section class="food_section layout_padding">
+    <div class="container">
+  
+
+      <section class="book_section layout_padding">
+        <div class="container">
+          <div class="heading_container">
+            <h2>
+              Booking
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form_container">
+                <form [formGroup]="bookingForm" action="">
+                  <div>
+                    <input type="text" class="form-control" formControlName="name" placeholder="Your Name" />
+                    <p class="red" *ngIf="f.name.errors?.['required'] && f.name.touched">You need to fill this field</p>
+                  </div>
+                  <div>
+                    <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone Number" />
+                  </div>
+                  <p class="red" *ngIf="f.phoneNumber.errors && f.phoneNumber.touched">Invalid Phone Number</p>
+                  <div>
+                    <input type="email" class="form-control" formControlName="email"  placeholder="Your Email" [disabled]="true"/>
+                    
+                  </div>
+                  <div>
+                    <select class="form-control nice-select formControlName='qty' wide">
+                      <option value="" disabled selected>
+                        How many persons?
+                      </option>
+                      <option value="2">
+                        2
+                      </option>
+                      <option value="3">
+                        3
+                      </option>
+                      <option value="4">
+                        4
+                      </option>
+                      <option value="5">
+                        5
+                      </option>
+                    </select>
+                  </div>
+                  <div>
+                    <input type="date" formControlName="date" class="form-control">
+                    <div *ngIf="bookingForm.controls.date.errors?.['invalidDate']">
+                       <p class="red">Please select a valid date.</p>
+                    </div>
+                  </div>
+                  <div class="">
+                    <button [disabled] ='bookingForm.invalid' (click) ="open()">
+                      Book Now
+                    </button>
+                  
+                  </div>
+                </form>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </section>
+     
+    </div>
+  </section>

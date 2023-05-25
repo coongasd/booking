@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h4 class="modal-title">Edit product</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="editProductForm" action="">
+    <div>
+      <input type="text" class="form-control" formControlName="productName" placeholder="Product Name" />
+      <p class="red" *ngIf="f.productName.errors && f.productName.touched">You need to fill this field</p>
+    </div>
+    <br/>
+    <div>
+      <input type="number" class="form-control" formControlName="price" placeholder="Product Price" />
+      <p class="red" *ngIf="f.price.errors && f.price.touched">Invalid price</p>
+    </div>
+    <br/>
+  
+    <div>
+      <input type="text" class="form-control" formControlName="image"  placeholder="Product Image"/>
+      <p class="red" *ngIf="f.image.errors && f.image.touched">Invalid image</p>
+    </div>
+<br/>
+      <input type="text" formControlName='productType' class="form-control">
+      <div *ngIf="f.productType.errors && f.productType.touched">
+         <p class="red">Invalid product type.</p>
+      </div>
+    
+   
+  </form>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('false')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="editProduct()">Add</button>
+  </div>    

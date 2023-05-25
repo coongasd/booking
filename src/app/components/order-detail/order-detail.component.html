@@ -1,0 +1,55 @@
+<div class="container">
+    <h1>Order Detail</h1>
+    <div class="order_info">
+        <div class="user_info">
+          <div class="user_icon">
+            <mat-icon>person</mat-icon>
+          </div>
+          <div class="user_detail_info">
+            <p class="title">Customer</p>
+            <p class="user_name">{{order.user.name}}</p>
+            <p class="user_email">{{order.user.email}}</p>
+            <p class="user_phone">{{order.phoneNumber}}</p>
+          </div>
+        
+      </div>
+      <div class="user_contact">
+        <div class="user_info">
+          <div class="user_icon">
+            <mat-icon>location_on</mat-icon>
+          </div>
+          <div class="user_detail_info">
+            <p class="title">Location</p>
+            <p class="user_name">{{order.shippingAddress}}</p>
+          
+    
+          </div>
+        
+      </div>
+      </div>
+
+    </div>
+    <div *ngFor="let product of order.products" class="product_info">
+     
+        <div class="product">
+          <img [src]="product.image">
+          <p>{{product.productName}}</p>
+        </div>
+        <div class="qty">
+          <div class="product_qty">
+            <p>Quantity</p>
+            <p>{{product.productQty}}</p>
+          </div>
+          <div class="product_price">
+            <p>Price</p>
+            <p>{{product.price | currency:'VND'}}</p>
+          </div>
+        </div>
+      
+  
+    </div>
+    <div class="total_price">
+      <p>Total: <strong>{{order.totalPrice | currency:'VND'}}</strong></p>
+    </div>
+
+  </div>

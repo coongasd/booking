@@ -1,0 +1,37 @@
+<div class="container">
+  <p class = "title">Order list</p>
+  <table>
+   
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Order Time</th>
+          <th>Status</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+
+    <tbody>
+      <div class="alert alert-danger" *ngIf="orders?.length === 0">
+        You don't have any order yet
+      </div>
+      <tr *ngFor="let order of orders">
+  
+        <td>{{ order?.user?.name }}</td>
+        <td>{{ order?.orderTime | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+        <td>On going</td>
+        <td>
+          <a [routerLink]="order._id">
+            <mat-icon (click)="editOrder(order)">remove_red_eye</mat-icon>
+          </a>
+        </td>
+        <td>
+          <mat-icon (click)="deleteOrder(order)">cancel</mat-icon>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
